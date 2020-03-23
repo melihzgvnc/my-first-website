@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    
+    <div class="container" style="margin-top: 50px;">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto col-sm-auto col-lg-auto" style="width: 100%;">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{complaint.title}}<small> {{complaint.created_date}}</small></h5>
+                        <h6 class="card-title">Yazar: {{complaint.user.get_full_name}}</h6>
+                        <p class="card-text">{{complaint.text|linebreaks}}</p>
+                        <a href="" class="btn btn-primary">Go somewhere</a>
+                        
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    
+
+{% endblock %}
