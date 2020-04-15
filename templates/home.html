@@ -2,17 +2,22 @@
 
 {% block body %}
 
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-md-8 col-sm-6" style="background-color: darkgoldenrod;">1.sütun</div>
-         <div class="col-md-4 col-sm-6">
-            <div class="row">
-               <div class="col-md-4 col-sm-2 col-4" style="background-color: darkred;">1. sütun içi</div>
-               <div class="col-md-4 col-sm-6 col-4" style="background-color: darkcyan;">2. sütun içi</div>
-               <div class="col-md-4 col-sm-4 col-4" style="background-color: lightsalmon;">3. sütun içi</div>
+   <div class="container-fluid" style="margin-top: 100px;">
+      <div class="row justify-content-md-center">
+         <div class="card text-center border-dark">
+            <div class="card-header">
+              <h4>KIRKLARELİ ÜNİVERSİTESİ ŞİKAYET VE ÖNERİ OTOMASYONU</h4>
             </div>
-         </div>
-      </div>      
+            <div class="card-body">
+              <h6 class="card-title">Şikayet veya Öneri Oluşturun</h6>
+              <p class="card-text">Herhangi bir konudaki şikayet ve önerinizi doğal dil işleme ile çalışan otomasyonumuz aracılığıyla bize iletebilirsiniz.</p>
+              <a href="{% url 'accounts:login' %}" class="btn btn-dark">GİRİŞ YAP</a>
+            </div>
+            <div class="card-footer text-muted">
+              2020 @ Created by Serkan Kocairi - Melih Özgüvenç 
+            </div>
+          </div>
+      </div>     
    </div>
 
 {% endblock %}

@@ -7,10 +7,11 @@ class Complaint(models.Model):
     title = models.CharField(max_length=120, verbose_name='Başlık')
     text = models.TextField(verbose_name='Metin')
     created_date = models.DateTimeField(verbose_name='Yapıldığı Tarih', auto_now_add=True)
-    slug = models.SlugField(unique=True, editable=False, max_length=10)
-
+    slug = models.SlugField(unique=True, editable=False, max_length=100)
+ 
     def __str__(self):
         return self.title
+        return self.text
 
     def get_absolute_url(self):
         return reverse('complaint:detail', kwargs={'slug':self.slug})

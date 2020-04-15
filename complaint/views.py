@@ -3,6 +3,7 @@ from .models import Complaint
 from django.contrib import messages
 from django.utils.text import slugify
 from .forms import ComplaintForm
+from scripts.zemberek import run
 
 def complaint_index(request):
     if not request.user.is_authenticated:
@@ -20,11 +21,15 @@ def complaint_create(request):
     if form.is_valid():
         complaint=form.save(commit=False)
         complaint.user = request.user
-        complaint.save()  
+        complaint.save()
+        comp=complaint.text
+        tit=complaint.title  
+        run(comp,tit)
         return HttpResponseRedirect(complaint.get_absolute_url())
     context = {
         'form':form,
     }
+    
     return render(request, 'complaint/form.html', context)
 
     

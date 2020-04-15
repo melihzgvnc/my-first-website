@@ -6,12 +6,12 @@
     
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-md-8">
+        <div class="col-md-8" style="margin-top: 30px;">
             <form method="POST">
                 {% csrf_token %}
                 <h1>Öneri veya Şikayet</h1>
                 {{form|crispy}}
-                <input class="btn btn-primary" type="submit" value="Gönder">
+                <input class="btn btn-dark" type="submit" value="Oluştur">
             </form> 
         </div>
     </div>
